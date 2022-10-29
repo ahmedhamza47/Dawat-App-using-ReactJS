@@ -1,0 +1,81 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+*:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+.lobster {
+  font-family: "Lobster", cursive;
+  letter-spacing: 2px;
+}
+.gray {
+  color: rgb(180, 175, 175);
+}
+.orange {
+  color: #ec7a09;
+}
+.top-section {
+  background-image: url("/src/images/main-burger-image.jpg");
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+.nav-item {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  font-size: 0.8rem;
+}
+.navbar-brand {
+  color: white !important;
+}
+.active {
+  color: white !important;
+}
+.inactive {
+  color: gray !important;
+}
+.dropdown-menu a {
+  color: black !important;
+}
+
+.orange-btn {
+  background-color: #ec7a09 !important;
+  border-radius: 20px !important;
+  color: white !important;
+}
+.top-text-section {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  align-items: center;
+  transform: translate(-50%, -50%);
+}
+#delicious {
+  font-size: 0.8rem;
+}
+#treat {
+  font-size: 5rem;
+}
+#description {
+  font-size: 1rem;
+  margin: 2% 10% 2% 10%;
+}
+
+.top-icon-section {
+  color: white;
+  font-size: 2.5rem;
+}
+#icon {
+  padding-top: 1.2rem;
+  padding-left: 10px;
+  color: white;
+}
+
+.icons {
+  width: 1.52rem;
+}
