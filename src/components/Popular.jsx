@@ -29,7 +29,7 @@ function Popular() {
   return (
     <div>
       <Wrapper>
-        <h3>Popular Picks</h3>
+        <h3 className="mb-3">Popular Picks</h3>
         <Splide
           options={{
             perPage: 3,
@@ -44,9 +44,10 @@ function Popular() {
               <SplideSlide key={recipe.id}>
                 <Link to={"/recipes/" + recipe.id}>
                   <Card>
-                    <p>{recipe.title}</p>
-                    <img src={recipe.image} alt={recipe.title} />
-                    <Gradient />
+                    <Gradient>
+                      <p>{recipe.title}</p>
+                      <img src={recipe.image} alt={recipe.title} />
+                    </Gradient>
                   </Card>
                 </Link>
               </SplideSlide>
@@ -75,14 +76,17 @@ const Card = styled.div`
     width: 100%;
     height: 100%;
     object-fit: cover;
+    z-index: -1;
   }
+
   p {
     position: absolute;
     z-index: 10;
     left: 50%;
-    bottom: 0%;
+    bottom: -10%;
     transform: translate(-50%, 0%);
     color: white;
+
     width: 100%;
     text-align: center;
     font-weight: 600;

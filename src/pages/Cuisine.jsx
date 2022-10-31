@@ -55,7 +55,7 @@ const Grid = styled(motion.div)`
   margin-top: 2rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 1rem;
+  grid-gap: 0.5rem;
 `;
 const Card = styled.div`
   overflow: hidden;
@@ -66,8 +66,8 @@ const Card = styled.div`
   img {
     position: relative;
     left: 0;
-    width: 80%;
-    height: 80%;
+    width: 90%;
+    height: 90%;
     border-radius: 2rem;
   }
   a {

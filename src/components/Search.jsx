@@ -9,7 +9,6 @@ function Search() {
   const submitHandler = (e) => {
     e.preventDefault();
     navigate("/searched/" + input);
-    
   };
   return (
     <FormStlye onSubmit={submitHandler}>
@@ -32,7 +31,7 @@ const FormStlye = styled.form`
   margin: 2rem 8rem 0rem 8rem;
   div {
     position: relative;
-    width: 100%;
+    width: 80%;
     left: -5%;
   }
 

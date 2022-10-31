@@ -1,14 +1,16 @@
-import { FaPizzaSlice, FaHamburger } from "react-icons/fa";
+import { FaPizzaSlice, FaHamburger, FaBorderNone } from "react-icons/fa";
 import { GiNoodles, GiRiceCooker } from "react-icons/gi";
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function Category() {
   return (
     <div className="ml-5">
-      <h1 className="mt-4">
-        Popular <span class="orange"> Foods</span>
-      </h1>
+      <LINK to={"/"}>
+        <h1 className="mt-4" style={{ color: "black" }}>
+          Popular <span class="orange"> Foods</span>
+        </h1>
+      </LINK>
       <List>
         <SLink to={"/cuisine/Italian"}>
           <FaPizzaSlice />
@@ -30,6 +32,11 @@ function Category() {
     </div>
   );
 }
+const LINK = styled(Link)`
+  &:hover {
+    text-decoration: none;
+  }
+`;
 
 const List = styled.div`
   display: grid;
@@ -38,6 +45,7 @@ const List = styled.div`
 `;
 const SLink = styled(NavLink)`
   display: flex;
+  text-decoration: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -50,6 +58,9 @@ const SLink = styled(NavLink)`
   cursor: pointer;
   transform: scale(0.8);
 
+  &:hover {
+    text-decoration: none;
+  }
   h4 {
     color: white;
     font-size: 1.5rem;

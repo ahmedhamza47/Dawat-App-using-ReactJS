@@ -18,6 +18,10 @@ function Recipe() {
   useEffect(() => {
     getdetails(params.recipe);
   }, [params.recipe]);
+  // const wordCount = details.title.split(" ");
+  // console.log(wordCount);
+  // if (wordCount.length > 0) {
+  // }
   return (
     <DetailedWrapper>
       <div>
@@ -70,37 +74,44 @@ function Recipe() {
 const DetailedWrapper = styled.div`
   margin-top: 4rem;
   margin-bottom: 5rem;
-  align-items: center !important;
-  justify-content: center !important;
 
+  justify-content: center !important;
   display: flex;
   .active {
     background: linear-gradient(35deg, #494949, #313131);
     color: white;
   }
+  img {
+    width: 8cm;
+    height: 8cm;
+    border-radius: 20px;
+  }
   h2 {
-    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 2rem;
+    margin: 0 !important;
+    padding: 0 !important;
   }
   li {
-    font-size: 1.2rem;
-    line-height: 2.5rem;
+    font-size: 1rem;
+    line-height: 2rem;
   }
   ul {
-    margin-top: 2rem;
+    margin-top: 4rem;
   }
 `;
 const Button = styled.button`
-  padding: 1rem 2rem;
+  padding: 1rem 1rem;
   display: flex;
+
   justify-content: center;
   align-items: center;
   color: #313131;
   background: white;
   border: 2px solid black;
-  margin-right: 2rem;
+  margin-right: 20rem;
   font-weight: 600;
-  width: 100%;
-  height: 10vh;
+
   cursor: pointer;
 `;
 const Info = styled.div`
@@ -109,10 +120,13 @@ const Info = styled.div`
 `;
 const Btns = styled.div`
   display: flex;
+  gap: 20px;
 `;
 const H3 = styled.h3`
-  font-size: 1rem;
-  margin-top: 20px;
-  line-height: 30px;
+  font-size: 0.9rem;
+  line-height: 25px;
+  text-align: justify;
+  padding-right: 25px;
+  margin-top: 3.5rem;
 `;
 export default Recipe;

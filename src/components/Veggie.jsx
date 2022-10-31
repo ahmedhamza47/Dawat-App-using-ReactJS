@@ -27,7 +27,7 @@ function Veggie() {
   return (
     <div>
       <Wrapper>
-        <h3>Veggie Picks</h3>
+        <h3 className="mb-4">Veggie Picks</h3>
         <Splide
           options={{
             perPage: 3,
@@ -40,13 +40,14 @@ function Veggie() {
           {Veggie.map((recipe) => {
             return (
               <SplideSlide key={recipe.id}>
-                <Card>
-                  <Link to={`/recipes/` + recipe.id}>
-                    <p>{recipe.title}</p>
-                    <img src={recipe.image} alt={recipe.title} />
-                    <Gradient />
-                  </Link>
-                </Card>
+                <Link to={"/recipes/" + recipe.id}>
+                  <Card>
+                    <Gradient>
+                      <p>{recipe.title}</p>
+                      <img src={recipe.image} alt={recipe.title} />
+                    </Gradient>
+                  </Card>
+                </Link>
               </SplideSlide>
             );
           })}
@@ -59,8 +60,9 @@ const Wrapper = styled.div`
   margin: 2rem 4rem 2rem 0rem;
 `;
 const Card = styled.div`
-  min-height: 14rem;
+  height: 14rem;
   width: 14rem;
+
   border-radius: 2rem;
   overflow: hidden;
   position: relative;
@@ -72,14 +74,17 @@ const Card = styled.div`
     width: 100%;
     height: 100%;
     object-fit: cover;
+    z-index: -1;
   }
+
   p {
     position: absolute;
     z-index: 10;
     left: 50%;
-    bottom: 0%;
+    bottom: -10%;
     transform: translate(-50%, 0%);
     color: white;
+
     width: 100%;
     text-align: center;
     font-weight: 600;
@@ -96,4 +101,5 @@ const Gradient = styled.div`
   width: 100%;
   background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
 `;
+
 export default Veggie;
