@@ -38,15 +38,15 @@ const Grid = styled.div`
   margin-top: 2rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 0rem;
+  grid-gap: 1rem;
 `;
 const Card = styled.div`
   position: relative;
   justify-content: center;
   text-align: center;
   img {
-    width: 10rem;
-    height: 10rem;
+    width: 80%;
+    height: 80%;
     border-radius: 2rem;
   }
   a {
@@ -58,6 +58,9 @@ const Card = styled.div`
     padding-left: 0rem;
     font-size: 1rem;
     color: black;
+    @media screen and (max-width: 786px) {
+      font-size: 0.7rem;
+    }
   }
 `;
 export default Searched;

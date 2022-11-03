@@ -11,11 +11,11 @@ function App() {
       <BrowserRouter>
         <Navbar />
 
-        <div className="row pt-3">
-          <div className="col-lg-4">
+        <div className="row pt-3 recipe-row">
+          <div className="col-lg-4 col-md-4">
             <Category />
           </div>
-          <div className="col-lg-8">
+          <div className="col-lg-8 col-md-8">
             <Search />
             <Pages />
           </div>

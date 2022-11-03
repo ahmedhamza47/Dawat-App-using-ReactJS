@@ -76,7 +76,9 @@ const DetailedWrapper = styled.div`
   margin-bottom: 5rem;
 
   justify-content: center !important;
+  text-align: center;
   display: flex;
+
   .active {
     background: linear-gradient(35deg, #494949, #313131);
     color: white;
@@ -99,6 +101,9 @@ const DetailedWrapper = styled.div`
   ul {
     margin-top: 4rem;
   }
+  @media screen and (max-width: 786px) {
+    display: grid;
+  }
 `;
 const Button = styled.button`
   padding: 1rem 1rem;
@@ -113,6 +118,9 @@ const Button = styled.button`
   font-weight: 600;
 
   cursor: pointer;
+  @media screen and (max-width: 786px) {
+    margin-top: 2rem;
+  }
 `;
 const Info = styled.div`
   margin-right: 5%;
@@ -128,5 +136,8 @@ const H3 = styled.h3`
   text-align: justify;
   padding-right: 25px;
   margin-top: 3.5rem;
+  @media screen and (max-width: 786px) {
+    margin-top: 1.5rem;
+  }
 `;
 export default Recipe;

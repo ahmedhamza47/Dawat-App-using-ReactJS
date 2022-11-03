@@ -78,6 +78,9 @@ const Card = styled.div`
     color: black;
     text-align: center;
     padding: 1rem;
+    @media screen and (max-width: 786px) {
+      font-size: 0.7rem;
+    }
   }
 `;
 export default Cuisine;

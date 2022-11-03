@@ -48,6 +48,9 @@ const FormStlye = styled.form`
     padding: 1rem 3rem;
     height: 1cm;
     font-size: 0.5cm;
+    @media screen and (max-width: 786px) {
+      font-size: 0.4cm;
+    }
   }
   svg {
     position: absolute;

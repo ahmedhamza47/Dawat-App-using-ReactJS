@@ -20,7 +20,10 @@ function Bottom() {
           </h1>
         </div>
 
-        <div className="row justify-content-center text-center px-5  py-5">
+        <div
+          className="row justify-content-center text-center px-5  py-5"
+          style={{ backgroundColor: "rgba(255, 211, 146, 0.774)" }}
+        >
           <div className="col-lg-3 col-md-3 dessert-col">
             <div className="dessert" style={{ cursor: "pointer" }}>
               <img src={require("../images/dessert/dessert1.png")} alt="" />
@@ -31,7 +34,7 @@ function Bottom() {
               </div>
             </div>
           </div>
-          <div className=" col-lg-3 col-md-6">
+          <div className=" col-lg-3 col-md-3">
             <div className="dessert" style={{ cursor: "pointer" }}>
               <img src={require("../images/dessert/dessert2.png")} alt="" />
               <div className="dessert-info mt-4">
@@ -74,7 +77,7 @@ function Bottom() {
         </div>
       </div>
       <div className="fixed-background">
-        <div className="row mx-5 gallery-rows">
+        <div className="row mx-5 gallery-rows ">
           <div className="col-lg-6">
             <h5 className="gray" id="delicious" style={{ fontSize: " 1rem" }}>
               TESTIMONIALS
@@ -184,7 +187,7 @@ function Bottom() {
               PHOTO <span className="orange"> GALLERIES</span>
             </h1>
             <div className="row no-gutters">
-              <div className="col-lg-6">
+              <div className="col-lg-6 my-4">
                 <img
                   src={require("../images/breakfast/breakfast1.jpg")}
                   alt=""
@@ -197,11 +200,8 @@ function Bottom() {
                   className="menu-images gallery my-3 cursor-ptr"
                   id="gallery-img"
                 />
-                <button type="button" className="btn orange-btn mt-2">
-                  MORE GALLERIES
-                </button>
               </div>
-              <div className="col-lg-6">
+              <div className="col-lg-6 my-4">
                 <img
                   src={require("../images/dinner/dinner2.jpg")}
                   alt=""
@@ -215,6 +215,9 @@ function Bottom() {
                   id="gallery-img"
                 />
               </div>
+              <button type="button" className="btn orange-btn mt-5 mx-auto">
+                MORE GALLERIES
+              </button>
             </div>
           </div>
         </div>
@@ -236,12 +239,15 @@ function Bottom() {
             </div>
           </div>
 
-          <div className="row py-4 ">
+          <div className="row pb-3 pt-2 mx-auto parties-row ">
             <div className="col-lg-6  my-lg-auto">
               <h1 className="orange">Rs. 4999</h1>
               <h1>Birthday Party</h1>
 
-              <p style={{ color: "rgb(122, 117, 117)" }} className="mr-5 mt-3">
+              <p
+                style={{ color: "rgb(122, 117, 117)" }}
+                className="parties-par mt-3"
+              >
                 dawat is the best place for birthday parties, to hang out with
                 good food, live bands, huka, ambiance, crowd, service. Your pic
                 could also come on it's facebook page if you are lucky enough.
@@ -279,19 +285,22 @@ function Bottom() {
             </div>
           </div>
 
-          <div className="row py-4  py-4">
+          <div className="row py-4 parties-row py-4">
             <div className="col-lg-6 ">
               <img
                 src={require("../images/birthday/gathering.webp")}
                 alt=""
-                className="w-100"
+                className="w-100 mb-3"
               />
             </div>
             <div className="col-lg-6 px-5   ">
               <h1 className="orange">Rs. 4999</h1>
               <h1>Chief Guest Night Party</h1>
 
-              <p style={{ color: "rgb(122, 117, 117)" }} className=" mt-3">
+              <p
+                style={{ color: "rgb(122, 117, 117)" }}
+                className=" parties-par mt-3"
+              >
                 dawat is the best place for birthday parties, to hang out with
                 good food, live bands, huka, ambiance, crowd, service. Your pic
                 could also come on it's facebook page if you are lucky enough.
@@ -323,7 +332,7 @@ function Bottom() {
           </div>
         </div>
       </div>
-      <div className="jumbotron py-3 mb-0">
+      <div className="jumbotron justify-content-center text-center py-3 mb-0">
         <div className="container ">
           <div className="row">
             <div className="col-lg-7 col-xl-9">
@@ -339,8 +348,8 @@ function Bottom() {
         </div>
       </div>
       <footer>
-        <div className="row justify-content-center text-center no-gutters mx-5">
-          <div className="col description text-left ">
+        <div className="row justify-content-center text-center no-gutters ">
+          <div className="col-lg-5 description text-left ">
             <h5>
               About dawat
               <span className="orange" style={{ fontsize: "1.2rem" }}>
@@ -352,14 +361,14 @@ function Bottom() {
               Vokalia and Consonantia, there live the blind texts.
             </p>
           </div>
-          <div className="col mt-3">
+          <div className="col-lg-3 my-3">
             <h5>Connect Us</h5>
             <img src="https://img.icons8.com/ios-glyphs/30/ffffff/instagram-new.png" />
             <img src="https://img.icons8.com/ios-glyphs/30/ffffff/facebook-new.png" />
             <img src="https://img.icons8.com/ios-glyphs/30/ffffff/viber.png" />
             <img src="https://img.icons8.com/ios-glyphs/30/ffffff/facebook-messenger.png" />
           </div>
-          <div className="col contact mt-3">
+          <div className="col-lg-4 contact mt-3">
             <h5>Contact</h5>
             <p>Balaju,Kathmandu</p>
             <p>+977 9861329826</p>

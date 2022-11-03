@@ -36,7 +36,13 @@ function Popular() {
             arrows: false,
             pagination: false,
             drag: "free",
-            gap: "1rem",
+            gap: "0rem",
+
+            breakpoints: {
+              786: {
+                perPage: 2,
+              },
+            },
           }}
         >
           {popular.map((recipe) => {
@@ -64,11 +70,13 @@ const Wrapper = styled.div`
 const Card = styled.div`
   height: 14rem;
   width: 14rem;
-
   border-radius: 2rem;
   overflow: hidden;
   position: relative;
-
+  @media screen and (max-width: 786px) {
+    width: 10rem;
+    height: 10rem;
+  }
   img {
     border-radius: 2rem;
     position: absolute;

@@ -6,6 +6,7 @@
   align-items: center;
   margin-left: 12%;
   margin-right: -2cm;
+  margin-bottom: 20px;
 }
 
 .dessert:hover {
@@ -94,6 +95,7 @@
   font-size: 4rem;
   display: flex;
   cursor: pointer;
+  align-items: center;
 }
 
 #gallery-img {
@@ -114,6 +116,9 @@
 .events-section {
   background-color: rgba(255, 211, 146, 0.774);
 }
+.parties-par {
+  padding-right: 1cm;
+}
 /* Footer Section  */
 footer {
   background-color: rgb(131, 131, 131);
@@ -129,12 +134,12 @@ footer p {
 }
 
 .description {
-  margin-left: 5%;
+  padding-left: 50px !important;
   margin-top: 2%;
 }
 .description p {
   font-size: 0.9rem;
-  padding-right: 20%;
+  padding-right: 5%;
 }
 
 #icon {
@@ -148,4 +153,40 @@ footer p {
 }
 .socket p :hover {
   color: #ec7a09;
+}
+
+@media screen and (max-width: 900px) {
+  .gallery-rows {
+    justify-content: center;
+    text-align: center;
+  }
+  .customer-review,
+  .dot {
+    margin: auto !important;
+    justify-content: center;
+  }
+  #gallery-img {
+    width: 60%;
+  }
+  .parties-row {
+    justify-content: center;
+    text-align: center;
+  }
+  .parties-par {
+    padding-right: 0cm;
+  }
+  footer * {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  footer img {
+    margin: auto !important;
+  }
+  .description {
+    padding-left: 0px !important;
+  }
+  .description p {
+    padding-right: 0% !important;
+  }
 }

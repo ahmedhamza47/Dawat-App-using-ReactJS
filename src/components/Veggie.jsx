@@ -33,8 +33,13 @@ function Veggie() {
             perPage: 3,
             arrows: false,
             pagination: false,
+
             drag: "free",
-            gap: "0.5rem",
+            breakpoints: {
+              786: {
+                perPage: 2,
+              },
+            },
           }}
         >
           {Veggie.map((recipe) => {
@@ -56,6 +61,7 @@ function Veggie() {
     </div>
   );
 }
+
 const Wrapper = styled.div`
   margin: 2rem 4rem 2rem 0rem;
 `;
@@ -66,7 +72,10 @@ const Card = styled.div`
   border-radius: 2rem;
   overflow: hidden;
   position: relative;
-
+  @media screen and (max-width: 786px) {
+    width: 10rem;
+    height: 10rem;
+  }
   img {
     border-radius: 2rem;
     position: absolute;

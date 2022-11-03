@@ -5,13 +5,13 @@ import { Link, NavLink } from "react-router-dom";
 
 function Category() {
   return (
-    <div className="ml-5">
+    <DIV className="ml-5 justify-content-center text-center">
       <LINK to={"/"}>
         <h1 className="mt-4" style={{ color: "black" }}>
           Popular <span class="orange"> Foods</span>
         </h1>
       </LINK>
-      <List>
+      <List className="justify-content-center text-center">
         <SLink to={"/cuisine/Italian"}>
           <FaPizzaSlice />
           <h4>Italian</h4>
@@ -29,9 +29,16 @@ function Category() {
           <h4 style={{ textAlign: "center" }}>Middle Eastern</h4>
         </SLink>
       </List>
-    </div>
+    </DIV>
   );
 }
+const DIV = styled.div`
+  @media screen and (max-width: 786px) {
+    /* .recipe-row {
+      margin: ;
+    } */
+  }
+`;
 const LINK = styled(Link)`
   &:hover {
     text-decoration: none;
@@ -41,7 +48,10 @@ const LINK = styled(Link)`
 const List = styled.div`
   display: grid;
   justify-content: left;
-  margin: 2rem 0rem 0rem 4rem;
+  margin: 2rem 0rem 0rem 0rem;
+  @media screen and (max-width: 786px) {
+    display: flex;
+  }
 `;
 const SLink = styled(NavLink)`
   display: flex;
@@ -50,11 +60,14 @@ const SLink = styled(NavLink)`
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  margin-right: 2rem;
+
   text-decoration: none;
   background: linear-gradient(35deg, #494949, #313131);
   width: 8rem;
   height: 8rem;
+  @media screen and (max-width: 786px) {
+    height: 6rem;
+  }
   cursor: pointer;
   transform: scale(0.8);
 
@@ -66,6 +79,9 @@ const SLink = styled(NavLink)`
     font-size: 1.5rem;
     text-align: center;
     margin-top: 5%;
+    @media screen and (max-width: 786px) {
+      font-size: 1rem;
+    }
   }
   svg {
     color: white;
