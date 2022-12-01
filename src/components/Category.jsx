@@ -1,11 +1,11 @@
-import { FaPizzaSlice, FaHamburger, FaBorderNone } from "react-icons/fa";
+import { FaPizzaSlice, FaHamburger } from "react-icons/fa";
 import { GiNoodles, GiRiceCooker } from "react-icons/gi";
 import styled from "styled-components";
 import { Link, NavLink } from "react-router-dom";
 
 function Category() {
   return (
-    <DIV className="ml-5 justify-content-center text-center">
+    <DIV className="ml-4 justify-content-center text-center">
       <LINK to={"/"}>
         <h1 className="mt-4" style={{ color: "black" }}>
           Popular <span class="orange"> Foods</span>

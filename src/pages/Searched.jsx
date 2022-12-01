@@ -44,6 +44,11 @@ const Card = styled.div`
   position: relative;
   justify-content: center;
   text-align: center;
+  &:hover {
+    -ms-transform: scale(1); /* IE 9 */
+    -webkit-transform: scale(1); /* Safari 3-8 */
+    transform: scale(1.05);
+  }
   img {
     width: 80%;
     height: 80%;

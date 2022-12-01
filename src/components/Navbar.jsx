@@ -86,6 +86,7 @@ function Navbar() {
           </div>
         </div>
       </nav>
+
       <div className="top-text-section text-center">
         <h5 className="gray" id="delicious">
           ENJOY YOUR HEALTHY DELICIOUS MEAL

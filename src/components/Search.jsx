@@ -32,7 +32,7 @@ const FormStlye = styled.form`
   div {
     position: relative;
     width: 80%;
-    left: -5%;
+    left: 8%;
   }
 
   input {

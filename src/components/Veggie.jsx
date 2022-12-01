@@ -36,8 +36,9 @@ function Veggie() {
 
             drag: "free",
             breakpoints: {
-              786: {
+              560: {
                 perPage: 2,
+                gap: "5rem",
               },
             },
           }}
@@ -72,7 +73,12 @@ const Card = styled.div`
   border-radius: 2rem;
   overflow: hidden;
   position: relative;
-  @media screen and (max-width: 786px) {
+  &:hover {
+    -ms-transform: scale(1); /* IE 9 */
+    -webkit-transform: scale(1); /* Safari 3-8 */
+    transform: scale(1.05);
+  }
+  @media screen and (max-width: 1080px) {
     width: 10rem;
     height: 10rem;
   }
@@ -102,6 +108,9 @@ const Card = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    @media screen and (max-width: 786px) {
+      font-size: 0.8rem;
+    }
   }
 `;
 const Gradient = styled.div`

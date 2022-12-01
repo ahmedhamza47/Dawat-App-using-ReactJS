@@ -24,7 +24,7 @@ function Bottom() {
           className="row justify-content-center text-center px-5  py-5"
           style={{ backgroundColor: "rgba(255, 211, 146, 0.774)" }}
         >
-          <div className="col-lg-3 col-md-3 dessert-col">
+          <div className="col-lg-3 col-md-3 col-sm-6 dessert-col">
             <div className="dessert" style={{ cursor: "pointer" }}>
               <img src={require("../images/dessert/dessert1.png")} alt="" />
               <div className="dessert-info mt-4">
@@ -34,7 +34,7 @@ function Bottom() {
               </div>
             </div>
           </div>
-          <div className=" col-lg-3 col-md-3">
+          <div className=" col-lg-3 col-md-3 col-sm-6">
             <div className="dessert" style={{ cursor: "pointer" }}>
               <img src={require("../images/dessert/dessert2.png")} alt="" />
               <div className="dessert-info mt-4">
@@ -44,7 +44,7 @@ function Bottom() {
               </div>
             </div>
           </div>
-          <div className="col-lg-3 col-md-3">
+          <div className="col-lg-3 col-md-3 col-sm-6">
             <div className="dessert" style={{ cursor: "pointer" }}>
               <img
                 src={require("../images/dessert/dessert3.png")}
@@ -59,7 +59,7 @@ function Bottom() {
               </div>
             </div>
           </div>
-          <div className=" col-lg-3 col-md-3">
+          <div className=" col-lg-3 col-md-3 col-sm-6">
             <div className="dessert" style={{ cursor: "pointer" }}>
               <img
                 src={require("../images/dessert/dessert4.png")}
@@ -79,12 +79,10 @@ function Bottom() {
       <div className="fixed-background">
         <div className="row mx-5 gallery-rows ">
           <div className="col-lg-6">
-            <h5 className="gray" id="delicious" style={{ fontSize: " 1rem" }}>
-              TESTIMONIALS
-            </h5>
-            <h1 className="gray" style={{ fontSize: " 1rem" }}>
+            <h5 className="gray">TESTIMONIALS</h5>
+            <h2 className="gray">
               Satisfied<span className="orange"> Customer</span>
-            </h1>
+            </h2>
             <div>
               {active === "customer1" && (
                 <div className="customer1">
@@ -98,7 +96,10 @@ function Bottom() {
                     Hamza<span className="orange"> Ahmed</span>
                   </h1>
                   <p>CEO, Founder</p>
-                  <img src="https://img.icons8.com/ios-glyphs/30/000000/quote-left.png" />
+                  <img
+                    src="https://img.icons8.com/ios-glyphs/30/000000/quote-left.png"
+                    alt=""
+                  />
                   <p className="customer-review gray">
                     "This cozy restaurant has left the best impressions!
                     Hospitable hosts, delicious dishes, beautiful presentation,
@@ -121,7 +122,10 @@ function Bottom() {
                     Kamal <span className="orange"> Shrestha</span>
                   </h1>
                   <p>Co Founder</p>
-                  <img src="https://img.icons8.com/ios-glyphs/30/000000/quote-left.png" />
+                  <img
+                    src="https://img.icons8.com/ios-glyphs/30/000000/quote-left.png"
+                    alt=""
+                  />
                   <p className="customer-review gray">
                     Excellent food. Menu is extensive and seasonal to a
                     particularly high standard. Definitely fine dining. It can
@@ -146,7 +150,10 @@ function Bottom() {
                   </h1>
                   <p>Regular Customer</p>
 
-                  <img src="https://img.icons8.com/ios-glyphs/30/000000/quote-left.png" />
+                  <img
+                    src="https://img.icons8.com/ios-glyphs/30/000000/quote-left.png"
+                    alt=""
+                  />
                   <p className="customer-review gray">
                     First time in dawat and YOU have to go! It's the cutest
                     little spot with amazing food. The Hyderabadi Biryani is to
@@ -180,14 +187,12 @@ function Bottom() {
             </div>
           </div>
           <div className="col-lg-6">
-            <h5 className="gray" id="delicious" style={{ fontSize: "1rem" }}>
-              GALLERIES
-            </h5>
-            <h1 className="gray" style={{ fontSize: " 1rem" }}>
+            <h4 className="gray">GALLERIES</h4>
+            <h2 className="gray">
               PHOTO <span className="orange"> GALLERIES</span>
-            </h1>
+            </h2>
             <div className="row no-gutters">
-              <div className="col-lg-6 my-4">
+              <div className="col-lg-6 mx-auto my-4">
                 <img
                   src={require("../images/breakfast/breakfast1.jpg")}
                   alt=""
@@ -226,9 +231,9 @@ function Bottom() {
           <div className="fixed"></div>
         </div>
       </div>
-      <div className="events-section">
-        <div className="container ">
-          <div className="row justify-content-center text-center py-5">
+      <div className="events-section ">
+        <div className="container  justify-content-center text-center ">
+          <div className="row  py-5 justify-content-center text-center">
             <div className="col-md-12">
               <h5 className="gray" id="delicious">
                 EVENTS
@@ -239,7 +244,7 @@ function Bottom() {
             </div>
           </div>
 
-          <div className="row pb-3 pt-2 mx-auto parties-row ">
+          <div className="row pb-3 pt-2  parties-row ">
             <div className="col-lg-6  my-lg-auto">
               <h1 className="orange">Rs. 4999</h1>
               <h1>Birthday Party</h1>
@@ -256,21 +261,30 @@ function Bottom() {
                 <p>
                   {" "}
                   <span>
-                    <img src="https://img.icons8.com/material-outlined/24/000000/double-tick.png" />
+                    <img
+                      src="https://img.icons8.com/material-outlined/24/000000/double-tick.png"
+                      alt=""
+                    />
                   </span>{" "}
                   Separate Birthday Party Table
                 </p>
                 <p>
                   {" "}
                   <span>
-                    <img src="https://img.icons8.com/material-outlined/24/000000/double-tick.png" />
+                    <img
+                      src="https://img.icons8.com/material-outlined/24/000000/double-tick.png"
+                      alt=""
+                    />
                   </span>{" "}
                   Photos clicked by our professional Cameraman.
                 </p>
                 <p>
                   {" "}
                   <span>
-                    <img src="https://img.icons8.com/material-outlined/24/000000/double-tick.png" />
+                    <img
+                      src="https://img.icons8.com/material-outlined/24/000000/double-tick.png"
+                      alt=""
+                    />
                   </span>{" "}
                   Special discount on drinks
                 </p>
@@ -309,21 +323,30 @@ function Bottom() {
                 <p>
                   {" "}
                   <span>
-                    <img src="https://img.icons8.com/material-outlined/24/000000/double-tick.png" />
+                    <img
+                      src="https://img.icons8.com/material-outlined/24/000000/double-tick.png"
+                      alt=""
+                    />
                   </span>{" "}
                   Private Arrangements for Chief Guest
                 </p>
                 <p>
                   {" "}
                   <span>
-                    <img src="https://img.icons8.com/material-outlined/24/000000/double-tick.png" />
+                    <img
+                      src="https://img.icons8.com/material-outlined/24/000000/double-tick.png"
+                      alt=""
+                    />
                   </span>{" "}
                   Photos clicked by our professional Cameraman.
                 </p>
                 <p>
                   {" "}
                   <span>
-                    <img src="https://img.icons8.com/material-outlined/24/000000/double-tick.png" />
+                    <img
+                      src="https://img.icons8.com/material-outlined/24/000000/double-tick.png"
+                      alt=""
+                    />
                   </span>{" "}
                   Unlimited Drinks
                 </p>
@@ -349,7 +372,7 @@ function Bottom() {
       </div>
       <footer>
         <div className="row justify-content-center text-center no-gutters ">
-          <div className="col-lg-5 description text-left ">
+          <div className="col-lg-4 description text-left ">
             <h5>
               About dawat
               <span className="orange" style={{ fontsize: "1.2rem" }}>
@@ -361,12 +384,24 @@ function Bottom() {
               Vokalia and Consonantia, there live the blind texts.
             </p>
           </div>
-          <div className="col-lg-3 my-3">
+          <div className="col-lg-4 my-3">
             <h5>Connect Us</h5>
-            <img src="https://img.icons8.com/ios-glyphs/30/ffffff/instagram-new.png" />
-            <img src="https://img.icons8.com/ios-glyphs/30/ffffff/facebook-new.png" />
-            <img src="https://img.icons8.com/ios-glyphs/30/ffffff/viber.png" />
-            <img src="https://img.icons8.com/ios-glyphs/30/ffffff/facebook-messenger.png" />
+            <img
+              src="https://img.icons8.com/ios-glyphs/30/ffffff/instagram-new.png"
+              alt=""
+            />
+            <img
+              src="https://img.icons8.com/ios-glyphs/30/ffffff/facebook-new.png"
+              alt=""
+            />
+            <img
+              src="https://img.icons8.com/ios-glyphs/30/ffffff/viber.png"
+              alt=""
+            />
+            <img
+              src="https://img.icons8.com/ios-glyphs/30/ffffff/facebook-messenger.png"
+              alt=""
+            />
           </div>
           <div className="col-lg-4 contact mt-3">
             <h5>Contact</h5>
@@ -377,7 +412,7 @@ function Bottom() {
           </div>
         </div>
       </footer>
-      <div className="socket text-dark text-center py-2">
+      <div className="socket text-dark justify-content-center text-center py-2">
         <p className="orange ">
           &copy;
           <a href="index.html" className="orange">
@@ -389,20 +424,9 @@ function Bottom() {
   );
 }
 const P = styled.p`
-  justify-content: center;
-  text-align: center;
   padding: 0rem 0.3rem;
-  display: flex;
-  outline: none;
-
-  justify-content: center;
-  align-items: center;
   color: #313131;
-
-  border: none;
-  margin-right: 20rem;
   font-weight: 600;
-
   cursor: pointer;
   &:checked {
     color: orange;

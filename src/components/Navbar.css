@@ -11,7 +11,7 @@
   letter-spacing: 2px;
 }
 .gray {
-  color: rgb(180, 175, 175);
+  color: rgb(230, 220, 220);
 }
 .orange {
   color: #ec7a09;
@@ -24,6 +24,10 @@
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
+}
+.top-section img {
+  z-index: -999 !important;
+  height: 10cm;
 }
 .nav-item {
   margin-left: 1rem;
@@ -62,8 +66,10 @@
   font-size: 5rem;
 }
 #description {
+  position: relative;
   font-size: 1rem;
   margin: 2% 10% 2% 10%;
+  z-index: 999 !important;
 }
 
 .top-icon-section {
@@ -78,4 +84,18 @@
 
 .icons {
   width: 1.52rem;
+}
+
+@media screen and (max-width: 992px) {
+  .collapse button {
+    width: fit-content;
+    padding: 0.4rem;
+    font-size: 0.8rem;
+  }
+  #treat {
+    font-size: 3rem;
+  }
+  #description {
+    font-size: 0.8rem;
+  }
 }

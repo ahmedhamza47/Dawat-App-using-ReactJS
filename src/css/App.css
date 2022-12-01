@@ -1,10 +1,20 @@
-* {
-  margin-right: 0 !important;
-}
 .recipe-row {
   background-color: rgba(255, 211, 146, 0.774);
 }
-
+.recipe-row {
+  margin-right: 0 !important;
+}
+.row {
+  margin-right: 0;
+  margin-left: 0;
+}
+@media (min-width: 1200px) {
+  .container,
+  .container-lg,
+  .container-xl {
+    max-width: 90%;
+  }
+}
 @media screen and (max-width: 786px) {
   .recipe-row {
     margin: auto !important;

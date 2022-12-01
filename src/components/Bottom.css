@@ -4,8 +4,7 @@
   padding: 5%;
   width: 80%;
   align-items: center;
-  margin-left: 12%;
-  margin-right: -2cm;
+
   margin-bottom: 20px;
 }
 
@@ -81,10 +80,10 @@
 #customer {
   width: 10%;
   border-radius: 50%;
-  height: 8vh;
+  height: 10%;
 }
 .customer-name {
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 .customer-review {
   font-size: 0.93rem;
@@ -154,8 +153,9 @@ footer p {
 .socket p :hover {
   color: #ec7a09;
 }
-
-@media screen and (max-width: 900px) {
+@media screen and(min-width: 992px) {
+}
+@media screen and (max-width: 992px) {
   .gallery-rows {
     justify-content: center;
     text-align: center;
@@ -166,11 +166,22 @@ footer p {
     justify-content: center;
   }
   #gallery-img {
-    width: 60%;
+    width: 40%;
+    display: grid;
+    position: relative;
+    left: 30%;
+  }
+  .dessert p {
+    font-size: 0.9rem;
+    margin-left: 5%;
+  }
+  .dessert span {
+    margin-left: 5px !important;
   }
   .parties-row {
     justify-content: center;
     text-align: center;
+    margin-right: auto;
   }
   .parties-par {
     padding-right: 0cm;
@@ -188,5 +199,11 @@ footer p {
   }
   .description p {
     padding-right: 0% !important;
+  }
+  .events-section .container {
+    margin-right: auto !important;
+  }
+  .jumbotron .container {
+    margin-right: auto !important;
   }
 }

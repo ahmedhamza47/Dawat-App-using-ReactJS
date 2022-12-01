@@ -24,49 +24,42 @@ function Recipe() {
   // }
   return (
     <DetailedWrapper>
-      <div>
-        <h2>{details.title}</h2>
-        <img style={{ marginTop: 40 }} src={details.image} alt="" />
+      <div className="row">
+        <div className="col-lg-4">
+          <h2>{details.title}</h2>
+          <img style={{ marginTop: 40 }} src={details.image} alt="" />
+        </div>
+        <div className="col-lg-8">
+          <Info>
+            <Btns>
+              <Button
+                className={active === "overview" ? "active" : ""}
+                onClick={() => setActive("overview")}
+              >
+                Overview
+              </Button>
+              <Button
+                className={active === "instructions" ? "active" : ""}
+                onClick={() => setActive("instructions")}
+              >
+                Instructions
+              </Button>
+            </Btns>
+            {active === "overview" && (
+              <div>
+                <H3 dangerouslySetInnerHTML={{ __html: details.summary }}></H3>
+              </div>
+            )}
+            {active === "instructions" && (
+              <div>
+                <H3
+                  dangerouslySetInnerHTML={{ __html: details.instructions }}
+                ></H3>
+              </div>
+            )}
+          </Info>
+        </div>
       </div>
-      <Info>
-        <Btns>
-          <Button
-            className={active === "overview" ? "active" : ""}
-            onClick={() => setActive("overview")}
-          >
-            Overview
-          </Button>
-          <Button
-            className={active === "instructions" ? "active" : ""}
-            onClick={() => setActive("instructions")}
-          >
-            Instructions
-          </Button>
-          <Button
-            className={active === "ingredients" ? "active" : ""}
-            onClick={() => setActive("ingredients")}
-          >
-            Ingredients
-          </Button>
-        </Btns>
-        {active === "overview" && (
-          <div>
-            <H3 dangerouslySetInnerHTML={{ __html: details.summary }}></H3>
-          </div>
-        )}
-        {active === "instructions" && (
-          <div>
-            <H3 dangerouslySetInnerHTML={{ __html: details.instructions }}></H3>
-          </div>
-        )}
-        {active === "ingredients" && (
-          <ul>
-            {details.extendedIngredients.map((ingredient) => (
-              <li key={ingredient.id}>{ingredient.original}</li>
-            ))}
-          </ul>
-        )}
-      </Info>
     </DetailedWrapper>
   );
 }
@@ -75,7 +68,6 @@ const DetailedWrapper = styled.div`
   margin-top: 4rem;
   margin-bottom: 5rem;
 
-  justify-content: center !important;
   text-align: center;
   display: flex;
 
@@ -101,42 +93,45 @@ const DetailedWrapper = styled.div`
   ul {
     margin-top: 4rem;
   }
-  @media screen and (max-width: 786px) {
+  @media screen and (max-width: 992px) {
     display: grid;
   }
 `;
 const Button = styled.button`
   padding: 1rem 1rem;
-  display: flex;
 
-  justify-content: center;
-  align-items: center;
   color: #313131;
   background: white;
   border: 2px solid black;
-  margin-right: 20rem;
+
   font-weight: 600;
 
   cursor: pointer;
-  @media screen and (max-width: 786px) {
+  @media screen and (max-width: 992px) {
     margin-top: 2rem;
   }
 `;
 const Info = styled.div`
-  margin-right: 5%;
-  margin-left: 5%;
+  margin-left: 2%;
+  width: 100%;
 `;
 const Btns = styled.div`
   display: flex;
-  gap: 20px;
+  column-gap: 50px;
 `;
 const H3 = styled.h3`
   font-size: 0.9rem;
   line-height: 25px;
   text-align: justify;
-  padding-right: 25px;
+  padding-right: 50px;
   margin-top: 3.5rem;
-  @media screen and (max-width: 786px) {
+  text-decoration: none;
+
+  a {
+    color: black;
+    text-decoration: none;
+  }
+  @media screen and (max-width: 992px) {
     margin-top: 1.5rem;
   }
 `;

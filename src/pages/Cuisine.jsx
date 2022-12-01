@@ -13,6 +13,7 @@ function Cuisine() {
     getCuisine(params.type);
     console.log(params.type);
   }, [params.type]);
+  console.log(process.env.REACT_APP_API_KEY);
   //get cuisine from the api-
   const getCuisine = async (name) => {
     let check = localStorage.getItem(`${name}`);
@@ -63,6 +64,11 @@ const Card = styled.div`
   justify-content: center;
   text-align: center;
   margin-bottom: -8%;
+  &:hover {
+    -ms-transform: scale(1); /* IE 9 */
+    -webkit-transform: scale(1); /* Safari 3-8 */
+    transform: scale(1.05);
+  }
   img {
     position: relative;
     left: 0;
