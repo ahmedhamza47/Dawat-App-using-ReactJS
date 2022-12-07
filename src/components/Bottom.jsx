@@ -4,7 +4,7 @@ import "./Bottom.css";
 import styled from "styled-components";
 function Bottom() {
   const [active, setActive] = useState("customer1");
-
+  console.log(active);
   return (
     <div>
       <div className="middle-dessert-section justify-content-center text-center ">
