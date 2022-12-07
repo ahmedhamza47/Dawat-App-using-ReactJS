@@ -7,13 +7,13 @@ import { Link, useParams } from "react-router-dom";
 function Cuisine() {
   const [cuisine, setCuisine] = useState([]);
   cuisine.splice(-1, 1);
-  console.log(cuisine.length);
+  //console.log(cuisine.length);
   let params = useParams(); // fetch keywords from the url
   useEffect(() => {
     getCuisine(params.type);
-    console.log(params.type);
+    // console.log(params.type);
   }, [params.type]);
-  console.log(process.env.REACT_APP_API_KEY);
+  //console.log(process.env.REACT_APP_API_KEY);
   //get cuisine from the api-
   const getCuisine = async (name) => {
     let check = localStorage.getItem(`${name}`);

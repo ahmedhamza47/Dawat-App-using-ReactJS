@@ -2,17 +2,20 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { ADD } from "../redux/actions";
 function Recipe() {
   const [details, setdetails] = useState({});
   const [active, setActive] = useState("overview");
   let params = useParams();
-  console.log(params.recipe);
+  const dispatch = useDispatch();
+  //console.log(params.recipe);
   const getdetails = async (name) => {
     const api = await fetch(
       `https://api.spoonacular.com/recipes/${name}/information?apiKey=${process.env.REACT_APP_API_KEY}`
     );
     const data = await api.json();
-    console.log(data);
+    //console.log(data);
     setdetails(data);
   };
   useEffect(() => {
@@ -22,6 +25,10 @@ function Recipe() {
   // console.log(wordCount);
   // if (wordCount.length > 0) {
   // }
+
+  const addToCart = (e) => {
+    dispatch(ADD(e));
+  };
   return (
     <DetailedWrapper>
       <div className="row">
@@ -43,6 +50,14 @@ function Recipe() {
                 onClick={() => setActive("instructions")}
               >
                 Instructions
+              </Button>
+              <Button
+                onClick={() => {
+                  addToCart(details);
+                }}
+              >
+                {" "}
+                Add TO cart
               </Button>
             </Btns>
             {active === "overview" && (

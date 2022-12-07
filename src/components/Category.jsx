@@ -8,7 +8,7 @@ function Category() {
     <DIV className="ml-4 justify-content-center text-center">
       <LINK to={"/"}>
         <h1 className="mt-4" style={{ color: "black" }}>
-          Popular <span class="orange"> Foods</span>
+          Popular <span className="orange"> Foods</span>
         </h1>
       </LINK>
       <List className="justify-content-center text-center">

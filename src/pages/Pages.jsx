@@ -5,6 +5,7 @@ import Cuisine from "./Cuisine";
 import Searched from "./Searched";
 import Recipe from "./Recipe";
 import { AnimatePresence } from "framer-motion";
+
 function Pages() {
   const location = useLocation();
   return (
