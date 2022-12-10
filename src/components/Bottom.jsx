@@ -261,30 +261,21 @@ function Bottom() {
                 <p>
                   {" "}
                   <span>
-                    <img
-                      src="https://img.icons8.com/material-outlined/24/000000/double-tick.png"
-                      alt=""
-                    />
+                    <i className="bi bi-check2-all"></i>
                   </span>{" "}
                   Separate Birthday Party Table
                 </p>
                 <p>
                   {" "}
                   <span>
-                    <img
-                      src="https://img.icons8.com/material-outlined/24/000000/double-tick.png"
-                      alt=""
-                    />
+                    <i className="bi bi-check2-all"></i>
                   </span>{" "}
                   Photos clicked by our professional Cameraman.
                 </p>
                 <p>
                   {" "}
                   <span>
-                    <img
-                      src="https://img.icons8.com/material-outlined/24/000000/double-tick.png"
-                      alt=""
-                    />
+                    <i className="bi bi-check2-all"></i>
                   </span>{" "}
                   Special discount on drinks
                 </p>
@@ -294,7 +285,7 @@ function Bottom() {
               <img
                 src={require("../images/birthday/birthday2.jpg")}
                 alt=""
-                className="w-100"
+                className="w-100 h-100"
               />
             </div>
           </div>
@@ -304,7 +295,7 @@ function Bottom() {
               <img
                 src={require("../images/birthday/gathering.webp")}
                 alt=""
-                className="w-100 mb-3"
+                className="w-100 h-100 mb-3"
               />
             </div>
             <div className="col-lg-6 px-5   ">
@@ -323,30 +314,21 @@ function Bottom() {
                 <p>
                   {" "}
                   <span>
-                    <img
-                      src="https://img.icons8.com/material-outlined/24/000000/double-tick.png"
-                      alt=""
-                    />
+                    <i className="bi bi-check2-all"></i>
                   </span>{" "}
                   Private Arrangements for Chief Guest
                 </p>
                 <p>
                   {" "}
                   <span>
-                    <img
-                      src="https://img.icons8.com/material-outlined/24/000000/double-tick.png"
-                      alt=""
-                    />
+                    <i className="bi bi-check2-all"></i>
                   </span>{" "}
                   Photos clicked by our professional Cameraman.
                 </p>
                 <p>
                   {" "}
                   <span>
-                    <img
-                      src="https://img.icons8.com/material-outlined/24/000000/double-tick.png"
-                      alt=""
-                    />
+                    <i className="bi bi-check2-all"></i>
                   </span>{" "}
                   Unlimited Drinks
                 </p>

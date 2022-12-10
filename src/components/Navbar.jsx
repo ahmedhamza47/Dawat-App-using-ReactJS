@@ -5,12 +5,14 @@ import { useState } from "react";
 import { connect, useDispatch, useSelector } from "react-redux";
 import { DELETE } from "../redux/actions";
 import { useEffect } from "react";
+import { useAuth0 } from "@auth0/auth0-react";
 function Navbar() {
   //cart add in cart icon
   const getData = useSelector((state) => state.cartReducer.carts);
-  console.log(getData);
+  const { loginWithRedirect, isAuthenticated, logout, user } = useAuth0();
+
   const dispatch = useDispatch();
-  const [cartList, setCartList] = useState(false);
+  //const [cartList, setCartList] = useState(false);
   // const handleClose = () => {
   //   setCartList(null);
   // };
@@ -24,14 +26,21 @@ function Navbar() {
       totalPrice =
         parseFloat(element.pricePerServing) * element.qty + totalPrice;
     });
-    setTotalPrice(totalPrice);
+    setTotalPrice(totalPrice.toFixed(2));
   };
   useEffect(() => {
     getTotalPrice();
   }, [getTotalPrice]);
+
+  const handleLogin = () => {
+    loginWithRedirect();
+  };
+  const handleLogout = () => {
+    logout({ returnTo: window.location.origin });
+  };
   return (
-    <div className="top-section">
-      <nav className="navbar navbar-expand-lg navbar-light pt-3">
+    <div>
+      <nav className="navbar  navbar-expand-lg   shadow-5-strong pt-3">
         <div className="container">
           <a className="navbar-brand lobster" href="index.html">
             dawat.
@@ -51,9 +60,11 @@ function Navbar() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ml-auto mr-auto">
               <li className="nav-item ">
-                <a className="nav-link active" href="/">
-                  Home <span className="sr-only">(current)</span>
-                </a>
+                <Link to={"/"}>
+                  <a className="nav-link active">
+                    Home <span className="sr-only">(current)</span>
+                  </a>
+                </Link>
               </li>
 
               <li className="nav-item ">
@@ -104,9 +115,9 @@ function Navbar() {
                       </div>
                       {getData.map((item) => {
                         return (
-                          <div>
+                          <div key={item.id}>
                             <div className="cart-content my-3">
-                              <Link to={"/cart"}>
+                              <Link to={`/cart`}>
                                 <img
                                   src={item.image}
                                   alt={item.title}
@@ -131,47 +142,42 @@ function Navbar() {
                       </div>
                     </div>
                   ) : (
-                    <Link className="dropdown-item" to={"/cart/"}>
-                      Your Cart is Empty
-                    </Link>
+                    <div className="dropdown-item">Your Cart is Empty</div>
                   )}
                 </div>
+              </li>
+              {isAuthenticated && (
+                <li>
+                  <img
+                    src={user.picture}
+                    alt=""
+                    style={{ width: "1.5rem", height: "1.5rem" }}
+                  />{" "}
+                  {user.name}{" "}
+                </li>
+              )}
+              <li>
+                {isAuthenticated ? (
+                  <button
+                    className="btn orange-btn mt-2"
+                    onClick={() => handleLogout()}
+                  >
+                    Log Out
+                  </button>
+                ) : (
+                  <button
+                    className="btn orange-btn mt-2"
+                    onClick={() => handleLogin()}
+                  >
+                    {" "}
+                    Login
+                  </button>
+                )}
               </li>
             </ul>
           </div>
         </div>
       </nav>
-
-      <div className="top-text-section text-center">
-        <h5 className="gray" id="delicious">
-          ENJOY YOUR HEALTHY DELICIOUS MEAL
-        </h5>
-        <h1 className="lobster" id="treat">
-          Treat Yourself
-        </h1>
-        <h5 className="gray" id="description">
-          We provide the best delicious meals in all of the Kathmandu valley
-          with variety of dishes to choose from & home delivery option as well
-          as packaging.
-        </h5>
-        <button type="button" className="btn orange-btn mt-3">
-          EXPLORE NOW
-        </button>
-      </div>
-      <div className="top-icon-section">
-        <a href="http://www.facebook.com" target="/">
-          <i className="fab fa-facebook-f" id="icon"></i>
-        </a>
-        <a href="http://twitter.com" target="/">
-          <i className="fab fa-twitter" id="icon"></i>
-        </a>
-        <a href="http://www.instagram.com" target="/">
-          <i className="fab fa-instagram" id="icon"></i>
-        </a>
-        <a href="http://www.youtube.com" target="/">
-          <i className="fab fa-youtube" id="icon"></i>
-        </a>
-      </div>
     </div>
   );
 }

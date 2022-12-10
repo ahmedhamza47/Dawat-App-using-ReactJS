@@ -20,14 +20,15 @@
   background-image: url("/src/images/main-burger-image.jpg");
   background-position: center;
   width: 100%;
-  height: 100vh;
+  height: 91vh;
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
 }
-.top-section img {
-  height: 10cm;
+nav {
+  background-color: rgb(0, 0, 0);
 }
+
 .nav-item {
   margin-left: 1rem;
   margin-right: 1rem;

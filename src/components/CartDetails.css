@@ -1,0 +1,24 @@
+.info {
+  display: grid;
+}
+
+.container-cart {
+  padding: 2% 0% 2% 5%;
+}
+.btn-count {
+  padding: 0rem 0.2rem;
+  border: rgb(213, 208, 208);
+  margin-left: 0.5rem;
+  font-size: 1rem;
+}
+.btn-text span {
+  font-size: 1rem;
+}
+img {
+  border-radius: 20px;
+  height: 20vh;
+  width: 25vh;
+}
+.item-qty {
+  font-weight: bolder;
+}
