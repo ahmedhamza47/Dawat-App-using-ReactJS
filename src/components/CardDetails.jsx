@@ -10,7 +10,9 @@ import { DELETE, ADD, REMOVE_INT } from "../redux/actions";
 import Navbar from "./Navbar";
 import { REMOVE_ITEM } from "../redux/type";
 import "./CartDetails.css";
-
+import Footer from "./Footer";
+import { BsTrash } from "react-icons/bs";
+import Swal from "sweetalert2";
 const CardDetails = () => {
   const [data, setData] = useState([]);
   const getData = useSelector((state) => state.cartReducer.carts);
@@ -36,11 +38,28 @@ const CardDetails = () => {
 
   const navigate = useNavigate();
   const deleteItem = (id) => {
-    dispatch(DELETE(id));
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire("Deleted!", "Your file has been deleted.", "success");
+        dispatch(DELETE(id));
+      }
+    });
+  };
+  const navigateToHome = () => {
+    navigate("/");
   };
   if (getData.length == 0) {
-    navigate("/");
+    const time0ut = setTimeout(navigateToHome, 2000);
   }
+
   //console.log(getData);
   const [totalPrice, setTotalPrice] = useState(0);
   const getTotalPrice = () => {
@@ -66,7 +85,7 @@ const CardDetails = () => {
         {getData.map((item) => (
           <div className="row no-gutters mb-5" key={item.id}>
             <div className="col-md-3">
-              <div className="image">
+              <div className="image ">
                 <img src={item.image} alt="" className="w-50" />
               </div>
             </div>
@@ -104,22 +123,27 @@ const CardDetails = () => {
                     </button>
                   </div>
                 </div>
-                <h3>${item.pricePerServing}</h3>
+                <h3>Price: ${item.pricePerServing}</h3>
               </div>
             </div>
             <div className="col-md-3 my-auto">
               {" "}
-              <i
-                className="bi bi-trash ml-3 "
-                onClick={() => deleteItem(item.id)}
-              ></i>
+              <h5>
+                <BsTrash
+                  className="trash"
+                  onClick={() => deleteItem(item.id)}
+                />
+              </h5>
             </div>
           </div>
         ))}
 
         <div className="total">
-          <h1>Sub Total : {totalPrice.toFixed(2)}</h1>
+          <h1>Total : ${totalPrice.toFixed(2)}</h1>
         </div>
+      </div>
+      <div className="footer">
+        <Footer />
       </div>
     </div>
   );

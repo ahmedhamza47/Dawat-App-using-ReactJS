@@ -6,6 +6,7 @@ import { connect, useDispatch, useSelector } from "react-redux";
 import { DELETE } from "../redux/actions";
 import { useEffect } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
+import { BsTrash } from "react-icons/bs";
 function Navbar() {
   //cart add in cart icon
   const getData = useSelector((state) => state.cartReducer.carts);
@@ -90,9 +91,9 @@ function Navbar() {
                   Contact <span className="sr-only">(current)</span>
                 </a>
               </li>
-              <li className="nav-item  dropdown">
+              <li className="nav-item dropdown">
                 <a
-                  className="nav-link inactive dropdown-toggle"
+                  className=" inactive dropdown-toggle"
                   href="/"
                   id="navbarDropdown"
                   role="button"
@@ -108,37 +109,42 @@ function Navbar() {
                   aria-labelledby="navbarDropdown"
                 >
                   {getData.length ? (
-                    <div className="dropdown-item">
-                      <div className="heading">
-                        <h5 className="mr-3">Photo</h5>
-                        <h5>Product Name</h5>
+                    <div>
+                      <div className="dropdown-item">
+                        <div className="heading">
+                          <h5 className="mr-3">Photo</h5>
+                          <h5>Product Name</h5>
+                        </div>
                       </div>
                       {getData.map((item) => {
                         return (
-                          <div key={item.id}>
-                            <div className="cart-content my-3">
-                              <Link to={`/cart`}>
+                          <div className="dropdown-item mb-2" key={item.id}>
+                            <div className="cart-content ">
+                              <Link className="link" to={`/cart`}>
                                 <img
                                   src={item.image}
                                   alt={item.title}
-                                  className="mx-2 "
+                                  className="mr-2 my-auto "
                                 />
-                                <div className="cart-content-description ml-3">
-                                  <p className="mb-0">{item.title}</p>
+                                <div className="cart-content-description ml-3 mr-5">
+                                  <p className="">{item.title}</p>
                                   <p>${item.pricePerServing}</p>
                                   <p> Quantity : {item.qty}</p>
                                 </div>
                               </Link>
-                              <i
-                                className="bi bi-trash ml-3 "
+                              <BsTrash
+                                className="dropdown-trash "
                                 onClick={() => del(item.id)}
-                              ></i>
+                              />
                             </div>
                           </div>
                         );
                       })}
-                      <div className="details-total">
-                        <h4>Total :${totalPrice}</h4>
+                      <div class="dropdown-divider"></div>
+                      <div className="dropdown-item">
+                        <div className="details-total">
+                          <h4>Total : ${totalPrice}</h4>
+                        </div>
                       </div>
                     </div>
                   ) : (
@@ -146,25 +152,45 @@ function Navbar() {
                   )}
                 </div>
               </li>
+
+              {/* user login and logout */}
+
               {isAuthenticated && (
-                <li>
-                  <img
-                    src={user.picture}
-                    alt=""
-                    style={{ width: "1.5rem", height: "1.5rem" }}
-                  />{" "}
-                  {user.name}{" "}
+                <li className="nav-item right  dropdown mt-2">
+                  <a
+                    className=" inactive dropdown-toggle"
+                    id="navbarDropdown"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    <img
+                      src={user.picture}
+                      alt={user.name}
+                      style={{ width: "2.5rem", height: "2.5rem" }}
+                    />
+                  </a>
+                  <div
+                    className="dropdown-menu justify-content-center text-center"
+                    aria-labelledby="navbarDropdown"
+                  >
+                    <a className="dropdown-item">{user.name}</a>
+
+                    <div className="dropdown-divider"></div>
+                    <a className="dropdown-item">
+                      <button
+                        className="btn orange-btn mt-2"
+                        onClick={() => handleLogout()}
+                      >
+                        Logout
+                      </button>
+                    </a>
+                  </div>
                 </li>
               )}
-              <li>
-                {isAuthenticated ? (
-                  <button
-                    className="btn orange-btn mt-2"
-                    onClick={() => handleLogout()}
-                  >
-                    Log Out
-                  </button>
-                ) : (
+              {!isAuthenticated && (
+                <li className="nav-item right pb-2">
                   <button
                     className="btn orange-btn mt-2"
                     onClick={() => handleLogin()}
@@ -172,8 +198,8 @@ function Navbar() {
                     {" "}
                     Login
                   </button>
-                )}
-              </li>
+                </li>
+              )}
             </ul>
           </div>
         </div>

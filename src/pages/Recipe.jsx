@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { ADD } from "../redux/actions";
+import { Link } from "react-router-dom";
+import { MdStarRate } from "react-icons/md";
+import Swal from "sweetalert2";
 function Recipe() {
   const [details, setdetails] = useState({});
   const [active, setActive] = useState("overview");
@@ -15,7 +18,7 @@ function Recipe() {
       `https://api.spoonacular.com/recipes/${name}/information?apiKey=${process.env.REACT_APP_API_KEY}`
     );
     const data = await api.json();
-    //console.log(data);
+    console.log(data);
     setdetails(data);
   };
   useEffect(() => {
@@ -25,8 +28,24 @@ function Recipe() {
   // console.log(wordCount);
   // if (wordCount.length > 0) {
   // }
-
+  const navigate = useNavigate();
   const addToCart = (e) => {
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "Item added to Cart",
+      text: "Want to see your cart?",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Go to Cart",
+      cancelButtonText: "Not Now",
+      timer: 15000,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        navigate("/cart");
+      }
+    });
     dispatch(ADD(e));
   };
   return (
@@ -46,30 +65,38 @@ function Recipe() {
                 Overview
               </Button>
               <Button
-                className={active === "instructions" ? "active" : ""}
-                onClick={() => setActive("instructions")}
+                className={active === "detailInfo" ? "active" : ""}
+                onClick={() => setActive("detailInfo")}
               >
-                Instructions
+                Details
               </Button>
+
               <Button
                 onClick={() => {
                   addToCart(details);
                 }}
               >
                 {" "}
-                Add TO cart
+                Add To Cart
               </Button>
             </Btns>
             {active === "overview" && (
               <div>
-                <H3 dangerouslySetInnerHTML={{ __html: details.summary }}></H3>
+                <H3
+                  className="mt-5"
+                  dangerouslySetInnerHTML={{ __html: details.summary }}
+                ></H3>
               </div>
             )}
-            {active === "instructions" && (
+            {active === "detailInfo" && (
               <div>
-                <H3
-                  dangerouslySetInnerHTML={{ __html: details.instructions }}
-                ></H3>
+                <h5>Price :${details.pricePerServing}</h5>
+                <ul>
+                  {details.extendedIngredients.map((item) => {
+                    return <li>{item.name}</li>;
+                  })}
+                </ul>
+                <h5></h5>
               </div>
             )}
           </Info>
@@ -104,6 +131,7 @@ const DetailedWrapper = styled.div`
   li {
     font-size: 1rem;
     line-height: 2rem;
+    text-align: left;
   }
   ul {
     margin-top: 4rem;
@@ -139,7 +167,8 @@ const H3 = styled.h3`
   line-height: 25px;
   text-align: justify;
   padding-right: 50px;
-  margin-top: 3.5rem;
+  margin-top: 3rem;
+  margin-bottom: 0rem;
   text-decoration: none;
 
   a {

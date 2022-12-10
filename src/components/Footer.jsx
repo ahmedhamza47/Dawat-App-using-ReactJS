@@ -1,5 +1,10 @@
 import React from "react";
 import "./Bottom.css";
+import { AiOutlineInstagram } from "react-icons/ai";
+import { FaViber } from "react-icons/fa";
+import { GrTwitter } from "react-icons/gr";
+import { SiFacebook } from "react-icons/si";
+
 const Footer = () => {
   return (
     <div>
@@ -19,22 +24,10 @@ const Footer = () => {
           </div>
           <div className="col-lg-4 my-3">
             <h5>Connect Us</h5>
-            <img
-              src="https://img.icons8.com/ios-glyphs/30/ffffff/instagram-new.png"
-              alt=""
-            />
-            <img
-              src="https://img.icons8.com/ios-glyphs/30/ffffff/facebook-new.png"
-              alt=""
-            />
-            <img
-              src="https://img.icons8.com/ios-glyphs/30/ffffff/viber.png"
-              alt=""
-            />
-            <img
-              src="https://img.icons8.com/ios-glyphs/30/ffffff/facebook-messenger.png"
-              alt=""
-            />
+            <AiOutlineInstagram />
+            <SiFacebook />
+            <FaViber />
+            <GrTwitter />
           </div>
           <div className="col-lg-4 contact mt-3">
             <h5>Contact</h5>

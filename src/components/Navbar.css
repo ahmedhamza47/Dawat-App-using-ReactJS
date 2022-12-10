@@ -43,10 +43,28 @@ nav {
 .inactive {
   color: gray !important;
 }
+.right {
+  margin-left: 80%;
+}
+.dropdown-menu {
+  margin-left: -80%;
+}
 .dropdown-menu a {
   color: black !important;
 }
 
+.dropdown-trash {
+  color: rgb(126, 12, 12);
+  position: absolute;
+  font-size: 1.5rem;
+  right: 20px;
+}
+.link {
+  display: flex;
+}
+.link:hover {
+  text-decoration: none;
+}
 .orange-btn {
   background-color: #ec7a09 !important;
   border-radius: 20px !important;
@@ -62,11 +80,15 @@ nav {
 }
 .cart-content {
   display: flex;
+  align-items: center;
 }
 .cart-content img {
-  width: 3rem;
-  height: 3rem;
+  width: 4rem;
+  height: 4rem;
   border-radius: 10px;
+}
+.cart-content-description p {
+  margin-bottom: 0rem;
 }
 .top-text-section {
   position: absolute;
