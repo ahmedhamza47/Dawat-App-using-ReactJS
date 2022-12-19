@@ -3,24 +3,34 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/css";
+import axios from "axios";
 function Veggie() {
   const [Veggie, setVeggie] = useState([]);
   useEffect(() => {
     getVeggie();
   }, []);
   // fetch data from the api
+
   const getVeggie = async () => {
-    const check = localStorage.getItem("Veggie");
+    const check = localStorage.getItem("veggie");
     if (check) {
       setVeggie(JSON.parse(check));
     } else {
-      const api = await fetch(
-        `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9&tags=vegetarian`
-      );
-      const data = await api.json(); //api bata return garerko array lai data ma save garne
-      localStorage.setItem("Veggie", JSON.stringify(data.recipes));
-      setVeggie(data.recipes);
-      console.log(data);
+      axios
+        .get(
+          `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9&tags=vegetarian`
+        )
+        .then(function (response) {
+          // handle success
+          console.log(response.data.recipes);
+          const data = response.data.recipes;
+          localStorage.setItem("veggie", JSON.stringify(data));
+          setVeggie(data);
+        })
+        .catch(function (error) {
+          // handle error
+          console.log(error);
+        });
     }
   };
 
@@ -64,7 +74,10 @@ function Veggie() {
 }
 
 const Wrapper = styled.div`
-  margin: 2rem 4rem 2rem 0rem;
+  margin: 2rem 2rem 2rem 0rem;
+  @media screen and (max-width: 1250px) {
+    margin: auto;
+  }
 `;
 const Card = styled.div`
   height: 14rem;
@@ -79,7 +92,7 @@ const Card = styled.div`
     transform: scale(1.05);
   }
   @media screen and (max-width: 1080px) {
-    width: 10rem;
+    width: 90%;
     height: 10rem;
   }
   img {

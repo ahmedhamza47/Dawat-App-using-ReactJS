@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 import { useState } from "react";
 import { connect, useDispatch, useSelector } from "react-redux";
-import { DELETE } from "../redux/actions";
+import { DELETE } from "../../redux/actions";
 import { useEffect } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { BsTrash } from "react-icons/bs";
@@ -23,10 +23,11 @@ function Navbar() {
   const [totalPrice, setTotalPrice] = useState(0);
   const getTotalPrice = () => {
     let totalPrice = 0;
-    getData.map((element, index) => {
-      totalPrice =
-        parseFloat(element.pricePerServing) * element.qty + totalPrice;
-    });
+    getData.map(
+      (element) =>
+        (totalPrice =
+          parseFloat(element.pricePerServing) * element.qty + totalPrice)
+    );
     setTotalPrice(totalPrice.toFixed(2));
   };
   useEffect(() => {
@@ -47,7 +48,7 @@ function Navbar() {
             dawat.
           </a>
           <button
-            className="navbar-toggler"
+            className="navbar-toggler ml-auto custom-toggler"
             type="button"
             data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -62,16 +63,16 @@ function Navbar() {
             <ul className="navbar-nav ml-auto mr-auto">
               <li className="nav-item ">
                 <Link to={"/"}>
-                  <a className="nav-link active">
+                  <div className="nav-link active">
                     Home <span className="sr-only">(current)</span>
-                  </a>
+                  </div>
                 </Link>
               </li>
 
               <li className="nav-item ">
-                <a className="nav-link inactive" href="/">
+                <div className="nav-link inactive" href="">
                   Events <span className="sr-only">(current)</span>
-                </a>
+                </div>
               </li>
 
               <li className="nav-item  ">
@@ -91,7 +92,7 @@ function Navbar() {
                   Contact <span className="sr-only">(current)</span>
                 </a>
               </li>
-              <li className="nav-item dropdown">
+              <li className="nav-item dropdown cart-dropdown">
                 <a
                   className=" inactive dropdown-toggle"
                   href="/"
@@ -102,10 +103,12 @@ function Navbar() {
                   aria-expanded="false"
                 >
                   <i className="bi bi-cart4 cart"></i>
-                  {getData.length}
+                  {getData.length !== 0 && (
+                    <span className="cart-length">{getData.length}</span>
+                  )}
                 </a>
                 <div
-                  className="dropdown-menu "
+                  className="dropdown-menu cart-dropdown-menu "
                   aria-labelledby="navbarDropdown"
                 >
                   {getData.length ? (
@@ -156,8 +159,8 @@ function Navbar() {
               {/* user login and logout */}
 
               {isAuthenticated && (
-                <li className="nav-item right  dropdown mt-2">
-                  <a
+                <li className="nav-item right  user-dropdown dropdown mt-2">
+                  <div
                     className=" inactive dropdown-toggle"
                     id="navbarDropdown"
                     role="button"
@@ -170,29 +173,30 @@ function Navbar() {
                       alt={user.name}
                       style={{ width: "2.5rem", height: "2.5rem" }}
                     />
-                  </a>
+                  </div>
                   <div
-                    className="dropdown-menu justify-content-center text-center"
+                    className="dropdown-menu user-dropdown-menu justify-content-center text-center"
                     aria-labelledby="navbarDropdown"
                   >
-                    <a className="dropdown-item">{user.name}</a>
+                    <div className="dropdown-item">{user.name}</div>
 
                     <div className="dropdown-divider"></div>
-                    <a className="dropdown-item">
+                    <div className="dropdown-item">
                       <button
-                        className="btn orange-btn mt-2"
+                        type="button"
+                        className="btn btn-outline-warning orange-btn mt-2"
                         onClick={() => handleLogout()}
                       >
                         Logout
                       </button>
-                    </a>
+                    </div>
                   </div>
                 </li>
               )}
               {!isAuthenticated && (
-                <li className="nav-item right pb-2">
+                <li className="nav-item user-dropdown my-auto ">
                   <button
-                    className="btn orange-btn mt-2"
+                    className="btn btn-outline-warning mt-1 "
                     onClick={() => handleLogin()}
                   >
                     {" "}

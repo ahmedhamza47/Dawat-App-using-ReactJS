@@ -5,10 +5,9 @@
 //     cart: cartReducer,
 //   },
 // });
+import { configureStore } from "@reduxjs/toolkit";
 
-import { createStore } from "@reduxjs/toolkit";
 import root from "./reducer/main";
-import { useAuth0 } from "@auth0/auth0-react";
 
 function saveToLocalStorage(state) {
   try {
@@ -30,7 +29,7 @@ function loadFromLocalStorage() {
   }
 }
 
-const store = createStore(root, loadFromLocalStorage());
+const store = configureStore({ reducer: root }, loadFromLocalStorage());
 //called anytime  an action is dispatched (subcribed) method
 store.subscribe(() => saveToLocalStorage(store.getState()));
 export default store;

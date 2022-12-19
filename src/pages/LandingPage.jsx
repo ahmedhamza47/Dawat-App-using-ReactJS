@@ -2,10 +2,10 @@ import React from "react";
 import Pages from "./Pages";
 import Category from "../components/Category";
 
-import Navbar from "../components/Navbar";
+import Navbar from "../components/Navbar/Navbar";
 import Search from "../components/Search";
 import TopImage from "../components/TopImage";
-import Bottom from "../components/Bottom";
+import Bottom from "../components/Bottom/Bottom";
 const LandingPage = () => {
   return (
     <div>

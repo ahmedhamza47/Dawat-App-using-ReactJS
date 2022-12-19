@@ -9,6 +9,7 @@ function Search() {
   const submitHandler = (e) => {
     e.preventDefault();
     navigate("/searched/" + input);
+    setInput("");
   };
   return (
     <FormStlye onSubmit={submitHandler}>
@@ -18,7 +19,7 @@ function Search() {
           type="text"
           value={input}
           onChange={(event) => setInput(event.target.value)}
-          placeholder="search any recipe"
+          placeholder="Search Menu"
         />
       </div>
     </FormStlye>

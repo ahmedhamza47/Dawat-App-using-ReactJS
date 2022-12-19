@@ -1,5 +1,5 @@
 import React from "react";
-import "./Navbar.css";
+import "./Navbar/Navbar.css";
 const TopImage = () => {
   return (
     <div className="top-section">

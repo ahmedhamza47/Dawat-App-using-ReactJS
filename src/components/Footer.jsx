@@ -1,5 +1,5 @@
 import React from "react";
-import "./Bottom.css";
+import "./Bottom/Bottom.css";
 import { AiOutlineInstagram } from "react-icons/ai";
 import { FaViber } from "react-icons/fa";
 import { GrTwitter } from "react-icons/gr";
@@ -17,17 +17,16 @@ const Footer = () => {
                 .
               </span>
             </h5>
-            <p>
-              Far far away, behind the word mountains, far from the countries
-              Vokalia and Consonantia, there live the blind texts.
-            </p>
+            <p>Good Food Good Life</p>
           </div>
           <div className="col-lg-4 my-3">
             <h5>Connect Us</h5>
-            <AiOutlineInstagram />
-            <SiFacebook />
-            <FaViber />
-            <GrTwitter />
+
+            <AiOutlineInstagram className="icon" />
+
+            <SiFacebook className="icon" />
+            <FaViber className="icon" />
+            <GrTwitter className="icon" />
           </div>
           <div className="col-lg-4 contact mt-3">
             <h5>Contact</h5>

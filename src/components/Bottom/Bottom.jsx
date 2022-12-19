@@ -2,11 +2,11 @@ import React from "react";
 import { useState } from "react";
 import "./Bottom.css";
 import styled from "styled-components";
-import Footer from "./Footer";
+import Footer from "../Footer";
 import { ImQuotesLeft, ImQuotesRight } from "react-icons/im";
 function Bottom() {
   const [active, setActive] = useState("customer1");
-  console.log(active);
+  // console.log(active);
   return (
     <div>
       <div className="middle-dessert-section justify-content-center text-center ">
@@ -97,7 +97,7 @@ function Bottom() {
                   <h1 className="customer-name gray">
                     Hamza<span className="orange"> Ahmed</span>
                   </h1>
-                  <p>CEO, Founder</p>
+                  <p>Regular Customer</p>
 
                   <p className="customer-review gray">
                     <ImQuotesLeft className="mb-3 mr-1" />
@@ -122,7 +122,7 @@ function Bottom() {
                   <h1 className="customer-name gray">
                     Kamal <span className="orange"> Shrestha</span>
                   </h1>
-                  <p>Co Founder</p>
+                  <p>Regular Customer</p>
 
                   <p className="customer-review gray">
                     <ImQuotesLeft className="mb-3 mr-1" />
@@ -229,9 +229,9 @@ function Bottom() {
         </div>
       </div>
       <div className="events-section ">
-        <div className="container  justify-content-center text-center ">
-          <div className="row  py-5 justify-content-center text-center">
-            <div className="col-md-12">
+        <div className="container   ">
+          <div className="row  py-5">
+            <div className="col-md-12  justify-content-center text-center">
               <h5 className="gray" id="delicious">
                 EVENTS
               </h5>
@@ -243,7 +243,7 @@ function Bottom() {
 
           <div className="row pb-3 pt-2  parties-row ">
             <div className="col-lg-6  my-lg-auto">
-              <h1 className="orange">Rs. 4999</h1>
+              <h1 className="orange">$ 499</h1>
               <h1>Birthday Party</h1>
 
               <p
@@ -282,21 +282,21 @@ function Bottom() {
               <img
                 src={require("../images/birthday/birthday2.jpg")}
                 alt=""
-                className="w-100 h-100"
+                className="w-100  events-image"
               />
             </div>
           </div>
 
-          <div className="row py-4 parties-row py-4">
-            <div className="col-lg-6 ">
+          <div className="row  parties-row py-4 mt-5">
+            <div className="col-lg-6  ">
               <img
                 src={require("../images/birthday/gathering.webp")}
                 alt=""
-                className="w-100 h-100 mb-3"
+                className="w-100 events-image mb-3"
               />
             </div>
-            <div className="col-lg-6 px-5   ">
-              <h1 className="orange">Rs. 4999</h1>
+            <div className="col-lg-6 my-lg-auto px-5   ">
+              <h1 className="orange">$ 499</h1>
               <h1>Chief Guest Night Party</h1>
 
               <p

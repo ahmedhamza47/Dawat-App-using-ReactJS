@@ -49,7 +49,7 @@ const List = styled.div`
   display: grid;
   justify-content: left;
   margin: 2rem 0rem 0rem 0rem;
-  @media screen and (max-width: 786px) {
+  @media screen and (max-width: 768px) {
     display: flex;
   }
 `;
@@ -68,6 +68,10 @@ const SLink = styled(NavLink)`
   @media screen and (max-width: 786px) {
     height: 6rem;
   }
+  @media screen and (max-width: 1080px) {
+    height: 6rem;
+    width: 6rem;
+  }
   cursor: pointer;
   transform: scale(0.8);
 
@@ -79,7 +83,7 @@ const SLink = styled(NavLink)`
     font-size: 1.5rem;
     text-align: center;
     margin-top: 5%;
-    @media screen and (max-width: 786px) {
+    @media screen and (max-width: 1080px) {
       font-size: 1rem;
     }
   }

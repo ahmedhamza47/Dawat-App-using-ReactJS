@@ -1,18 +1,18 @@
 import React from "react";
 import styled from "styled-components";
-import "./MenuListItem.css";
+
 const MenuListItem = (item) => {
   return (
     <div>
       <div className="container">
-        <div className="row">
+        <Row>
           <div className="col-md-4">
             <Img style={{ marginTop: 40 }} src={item.image} alt="" />
           </div>
           <div className="col-md-8 ">
             <p>{item.title}</p>
           </div>
-        </div>
+        </Row>
       </div>
     </div>
   );
@@ -20,5 +20,10 @@ const MenuListItem = (item) => {
 const Img = styled.img`
   width: 5cm;
   border-radius: 20px;
+`;
+const Row = styled.div`
+  justify-content: center;
+  text-align: center;
+  align-items: center;
 `;
 export default MenuListItem;

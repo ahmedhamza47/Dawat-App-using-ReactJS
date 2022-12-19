@@ -90,6 +90,7 @@
   margin-right: 20% !important;
   z-index: 99;
 }
+
 .dot {
   font-size: 4rem;
   display: flex;
@@ -116,16 +117,24 @@
   background-color: rgba(255, 211, 146, 0.774);
 }
 .parties-par {
-  padding-right: 1cm;
+  margin-right: 2cm;
+  font-size: 1.2rem;
+}
+.accomodation {
+  font-size: 1.2rem;
+}
+.events-image {
+  height: 25rem;
 }
 /* Footer Section  */
 footer {
   background-color: rgb(131, 131, 131);
 }
-
-.icons {
+.icon {
   color: white;
-  font-size: 1rem;
+  font-size: 2rem;
+  margin: 0.5rem;
+  cursor: pointer;
 }
 footer h5,
 footer p {
@@ -136,7 +145,7 @@ footer p {
   padding-left: 50px !important;
   margin-top: 2%;
 }
-.description p {
+my-lg-auto .description p {
   font-size: 0.9rem;
   padding-right: 5%;
 }
@@ -184,7 +193,10 @@ footer p {
     margin-right: auto;
   }
   .parties-par {
-    padding-right: 0cm;
+    margin: 2rem auto;
+  }
+  .events-image {
+    height: 20rem;
   }
   footer * {
     justify-content: center;

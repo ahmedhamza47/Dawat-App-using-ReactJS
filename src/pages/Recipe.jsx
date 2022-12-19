@@ -4,8 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { ADD } from "../redux/actions";
-import { Link } from "react-router-dom";
-import { MdStarRate } from "react-icons/md";
+
 import Swal from "sweetalert2";
 function Recipe() {
   const [details, setdetails] = useState({});
@@ -18,7 +17,7 @@ function Recipe() {
       `https://api.spoonacular.com/recipes/${name}/information?apiKey=${process.env.REACT_APP_API_KEY}`
     );
     const data = await api.json();
-    console.log(data);
+    // console.log(data);
     setdetails(data);
   };
   useEffect(() => {
@@ -51,11 +50,11 @@ function Recipe() {
   return (
     <DetailedWrapper>
       <div className="row">
-        <div className="col-lg-4">
+        <div className="col-xl-4 pl-0 pr-5 mb-3 ">
           <h2>{details.title}</h2>
           <img style={{ marginTop: 40 }} src={details.image} alt="" />
         </div>
-        <div className="col-lg-8">
+        <div className="col-xl-8 justify-content-center text-center pl-5">
           <Info>
             <Btns>
               <Button
@@ -82,21 +81,17 @@ function Recipe() {
             </Btns>
             {active === "overview" && (
               <div>
-                <H3
-                  className="mt-5"
-                  dangerouslySetInnerHTML={{ __html: details.summary }}
-                ></H3>
+                <H3 dangerouslySetInnerHTML={{ __html: details.summary }}></H3>
+                <h5 className="mt-3 text-left" style={{ color: "#ec7a09" }}>
+                  Price : $ {details.pricePerServing}
+                </h5>
               </div>
             )}
             {active === "detailInfo" && (
               <div>
-                <h5>Price :${details.pricePerServing}</h5>
-                <ul>
-                  {details.extendedIngredients.map((item) => {
-                    return <li>{item.name}</li>;
-                  })}
-                </ul>
-                <h5></h5>
+                <H3
+                  dangerouslySetInnerHTML={{ __html: details.instructions }}
+                ></H3>
               </div>
             )}
           </Info>
@@ -128,6 +123,7 @@ const DetailedWrapper = styled.div`
     margin: 0 !important;
     padding: 0 !important;
   }
+
   li {
     font-size: 1rem;
     line-height: 2rem;
@@ -136,6 +132,7 @@ const DetailedWrapper = styled.div`
   ul {
     margin-top: 4rem;
   }
+
   @media screen and (max-width: 992px) {
     display: grid;
   }
@@ -155,19 +152,24 @@ const Button = styled.button`
   }
 `;
 const Info = styled.div`
-  margin-left: 2%;
   width: 100%;
 `;
 const Btns = styled.div`
   display: flex;
+  align-items: center;
+  justify-content: center;
   column-gap: 50px;
+  margin-left: -10%;
+  @media screen and (max-width: 992px) {
+    margin-left: 0%;
+  }
 `;
 const H3 = styled.h3`
   font-size: 0.9rem;
   line-height: 25px;
   text-align: justify;
   padding-right: 50px;
-  margin-top: 3rem;
+  margin-top: 4rem;
   margin-bottom: 0rem;
   text-decoration: none;
 
