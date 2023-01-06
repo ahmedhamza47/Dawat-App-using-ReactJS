@@ -1,20 +1,3 @@
-// import { createSlice } from "@reduxjs/toolkit";
-
-// export const cartSlice = createSlice({
-//   name: "cart",
-//   initialState: {
-//     list: [],
-//   },
-//   reducers: {
-//     addItem: (state, { payload }) => {
-//       state.list = [...state.list, payload];
-//     },
-//   },
-// });
-
-// export const { addItem } = cartSlice.actions;
-// export default cartSlice.reducer;
-
 import { ADD_CART, REMOVE_ITEM } from "../type";
 import { REMOVE, CLEAR_CART } from "../type";
 
@@ -23,10 +6,6 @@ const initialStore = {
 };
 
 export const CartReducer = (state = initialStore, action) => {
-  // useEffect(() => {
-  //   console.log("cart");
-  //   // localStorage.setItem("cart", JSON.stringify(state.carts));
-  // });
   switch (action.type) {
     case ADD_CART:
       /*
@@ -50,7 +29,6 @@ export const CartReducer = (state = initialStore, action) => {
           carts: [...state.carts, temp], //then carts ko value lai destructure garera naya value i.e. temp lai add garera return gareko
         };
       }
-    // localStorage.setItem("cart", JSON.stringify(state.carts));
 
     case REMOVE:
       // state.carts ko items ko id lai check gareko and if match garcha vaney teslai hatayera baki lai return gareko

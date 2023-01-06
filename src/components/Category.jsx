@@ -100,6 +100,10 @@ const SLink = styled(NavLink)`
       color: white;
     }
   }
+  &.active ::before {
+    content: null;
+    width: 0px !important;
+  }
 `;
 
 export default Category;
